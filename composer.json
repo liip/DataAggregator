@@ -1,0 +1,27 @@
+{
+    "name": "liip/dataaggregator",
+    "description": "The data aggregator cumulates information provided by a loader and routes them to a persistence layer",
+    "license": "MIT",
+    "keywords": [ "liip", "data aggregation", "data filtering", "library" ],
+    "minimum-stability": "dev",
+
+    "authors": [
+        {
+            "name": "Bastian Feder",
+            "email": "bastian.feder@liip.ch",
+            "role": "maintainer"
+        }
+    ],
+
+    "require": {
+        "beberlei/assert": "dev-master"
+    },
+
+    "require-dev": {
+        "lapistano/proxy-object": "dev-master"
+    },
+
+    "autoload": {
+        "psr-0": { "Liip\\DataAggregator": "src" }
+    }
+}

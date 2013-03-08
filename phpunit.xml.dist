@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        syntaxCheck="true"
+        bootstrap="Tests/bootstrap.php"
+        strict="true"
+        >
+
+    <testsuites>
+        <testsuite name="DataAggregator Test Suite">
+            <directory>Tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <logging>
+        <log type="coverage-html" target="builds/coverage-html" title="Coverage Report of DataAggregator"
+             charset="UTF-8" yui="true" highlight="true"/>
+    </logging>
+
+    <filter>
+        <blacklist>
+            <directory>./vendor/</directory>
+            <directory>./builds/</directory>
+            <directory>./Tests/</directory>
+        </blacklist>
+    </filter>
+
+</phpunit>

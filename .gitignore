@@ -1,0 +1,8 @@
+# Ignore composer files
+vendor
+
+# Ignore IDE specific stuff
+.idea
+
+# Ignore testing artefacts
+builds
