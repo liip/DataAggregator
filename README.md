@@ -1,6 +1,11 @@
 # Liip DataAggregator
 
 
+## Current Travis Status
+
+[![Build Status](https://secure.travis-ci.org/liip/dataaggregator.png?branch=master)](http://travis-ci.org/liip/dataaggregator)
+
+
 ## Purpose
 The DataAggregator provides a structured way to fetch/retrieve information form different sources, process
 this information, and to persist it even to several destinations at once.
@@ -39,11 +44,6 @@ Imagine an implementation acting towards a loader as an aggregator and towards a
 This makes it possible to encapsulate a specific set of sources to one loader and provide the collected and probably
 already process information to the aggregator on the 1st level of your implementation. This makes it even easier
 to reuse loaders and persistors and should encourage you to follow all the nice oop principles out there (SOLID, DRY, ...).
-
-
-## Current Travis Status
-
-[![Build Status](https://secure.travis-ci.org/liip/dataaggregator.png?branch=master)](http://travis-ci.org/liip/dataaggregator)
 
 
 ## Installation
