@@ -116,34 +116,51 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
     }
 
     /**
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::run
      * @covers \Liip\DataAggregator\DataAggregatorBatch::executeLoader
      */
     public function testExecuteLoader()
     {
-        $this->markTestIncomplete();
-
         $persistor = $this->getDataPersistorMock(array('persist'));
         $persistor
-            ->expects($this->once())
+            ->expects($this->exactly(2))
             ->method('persist')
             ->with($this->isType('array'));
 
         $loader = $this->getDataLoaderBatchStub(array('load'));
         $loader
-            ->expects($this->once())
+            ->expects($this->exactly(2))
             ->method('load')
-            ->will($this->returnValue(array()));
+            ->with(
+                $this->isType('integer'),
+                $this->isType('integer')
+            )
+            ->will(
+                $this->onConsecutiveCalls(
+                    array('tux', 'gnu'),
+                    array('tux')
+                )
+            );
 
         /** @var \Liip\DataAggregator\DataAggregatorBatch $da */
-        $da = $this->getProxyBuilder('\\Liip\\DataAggregator\\DataAggregatorBatch')
-            ->setMethods(array('executeLoader'))
-            ->getProxy();
+        $da = new DataAggregatorBatch();
 
         $da->attachLoader($loader);
         $da->attachPersistor($persistor);
 
-        $da->setLimit(1);
-        $da->executeLoader($loader);
+        $da->setLimit(2);
+        $da->run();
+    }
+
+    /**
+     * @expectedException \Assert\InvalidArgumentException
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::run
+     */
+    public function testRunExpectingException()
+    {
+        /** @var \Liip\DataAggregator\DataAggregatorBatch $da */
+        $da = new DataAggregatorBatch();
+        $da->run();
     }
 
     /**

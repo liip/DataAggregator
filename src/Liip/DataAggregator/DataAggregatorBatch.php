@@ -6,7 +6,6 @@ use Liip\DataAggregator\Components\Loaders\LoaderBatchInterface;
 use Liip\DataAggregator\Components\Persistors\PersistorDefaultInterface;
 use Liip\DataAggregator\Loaders\LoaderException;
 use Liip\DataAggregator\Loaders\LoaderBatchInterface AS Loader;
-use Liip\DataAggregator\Persistors\PersistorException;
 use Liip\DataAggregator\Persistors\PersistorInterface AS Persistor;
 
 /**
@@ -38,7 +37,7 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
     /**
      * Adds given loader to registry.
      *
-     * @param \Liip\DataAggregator\LoaderBatchInterface $loader
+     * @param Loader $loader
      * @param string $key
      */
     public function attachLoader(Loader $loader, $key = '')
@@ -56,9 +55,18 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
      * Run each loader with limit and offset as long as it
      * returns not less than the limit of items persist
      * after each batch.
+     *
+     * @throws \Assert\InvalidArgumentException in case no loader is attached.
+     *
      */
     public function run()
     {
+        Assertion::notEmpty(
+            $this->loaders,
+            'No persistor attached.',
+            DataAggregatorException::NO_LOADER_ATTACHED
+        );
+
         foreach ($this->loaders as $identifier => $loader) {
 
             $this->executeLoader($loader);
@@ -70,7 +78,7 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
      *
      * Any exception or error will be logged to the systems error log.
      *
-     * @param LoaderBatchInterface $loader
+     * @param Loader $loader
      */
     protected function executeLoader(Loader $loader)
     {
@@ -136,6 +144,8 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
                 DataAggregatorException::NO_PERSISTOR_ATTACHED
             );
         }
+
+        // todo: check if $data is empty. if so skip iteration
 
         foreach ($this->persistors as $persistor) {
             try {
