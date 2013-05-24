@@ -145,8 +145,6 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
             );
         }
 
-        // todo: check if $data is empty. if so skip iteration
-
         foreach ($this->persistors as $persistor) {
             try {
                 $persistor->persist($data);
