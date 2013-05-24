@@ -13,12 +13,12 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
     public function testAttachLoader()
     {
         $loader = $this->getDataLoaderBatchStub();
-        $expected = array('TuxLoader' => $loader);
 
         $da = new DataAggregatorBatch();
-        $da->attachLoader($loader, 'TuxLoader');
+        $da->attachLoader($loader);
 
-        $this->assertEquals($expected, $da->loaders);
+        $loaders = $this->readAttribute($da, 'loaders');
+        $this->assertContainsOnly($loader, $loaders);
     }
 
     /**
@@ -32,7 +32,7 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
         $da = new DataAggregatorBatch();
         $da->attachLoader($loader, 'tux');
 
-        $this->assertEquals($expected, $da->loaders);
+        $this->assertEquals($expected, $this->readAttribute($da, 'loaders'));
     }
 
     /**
@@ -46,11 +46,11 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
         $da->attachLoader($loader, 'TuxLoader');
         $da->detachLoader('TuxLoader');
 
-        $this->assertEmpty($da->loaders);
+        $this->assertNotContains('TuxLoader', $this->readAttribute($da, 'loaders'));
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException \Assert\InvalidArgumentException
      * @covers \Liip\DataAggregator\DataAggregatorBatch::detachLoader
      */
     public function testDetachLoaderExceptionInvalidArgumentException()
@@ -95,18 +95,18 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
     public function testDetachPersistor()
     {
         $persistor = $this->getDataPersistorMock();
-        $expected = array();
 
         $da = new DataAggregatorBatch();
 
         $da->attachPersistor($persistor, 'suse');
         $da->detachPersistor('suse');
 
-        $this->assertAttributeEquals($expected, 'persistors', $da);
+        $persistors = $this->readAttribute($da, 'persistors');
+        $this->assertNotContains('suse', $persistors);
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException \Assert\InvalidArgumentException
      * @covers \Liip\DataAggregator\DataAggregatorBatch::detachPersistor
      */
     public function testDetachPersistorExpectionInvalidArgumentException()
@@ -122,15 +122,25 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
     {
         $this->markTestIncomplete();
 
+        $persistor = $this->getDataPersistorMock(array('persist'));
+        $persistor
+            ->expects($this->once())
+            ->method('persist')
+            ->with($this->isType('array'));
+
         $loader = $this->getDataLoaderBatchStub(array('load'));
         $loader
             ->expects($this->once())
             ->method('load')
             ->will($this->returnValue(array()));
 
+        /** @var \Liip\DataAggregator\DataAggregatorBatch $da */
         $da = $this->getProxyBuilder('\\Liip\\DataAggregator\\DataAggregatorBatch')
             ->setMethods(array('executeLoader'))
             ->getProxy();
+
+        $da->attachLoader($loader);
+        $da->attachPersistor($persistor);
 
         $da->setLimit(1);
         $da->executeLoader($loader);
@@ -178,4 +188,33 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
         );
     }
 
+    /**
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::persist
+     */
+    public function testPersist()
+    {
+        $collection = array();
+
+        $persistor = $this->getDataPersistorMock(array('persist'));
+
+        $persistor
+            ->expects($this->once())
+            ->method('persist')
+            ->with($this->isType('array'));
+
+        $da = new DataAggregatorBatch();
+
+        $da->attachPersistor($persistor);
+        $da->persist($collection);
+    }
+
+    /**
+     * @expectedException \Liip\DataAggregator\DataAggregatorException
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::persist
+     */
+    public function testPersistExpectingDataAggregatorException()
+    {
+        $da = new DataAggregatorBatch();
+        $da->persist(array());
+    }
 }

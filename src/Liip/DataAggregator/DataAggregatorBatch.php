@@ -6,6 +6,7 @@ use Liip\DataAggregator\Components\Loaders\LoaderBatchInterface;
 use Liip\DataAggregator\Components\Persistors\PersistorDefaultInterface;
 use Liip\DataAggregator\Loaders\LoaderException;
 use Liip\DataAggregator\Loaders\LoaderBatchInterface AS Loader;
+use Liip\DataAggregator\Persistors\PersistorException;
 use Liip\DataAggregator\Persistors\PersistorInterface AS Persistor;
 
 /**
@@ -17,7 +18,7 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
      * Registry of attached loaders.
      * @var array
      */
-    public $loaders = array();
+    protected $loaders = array();
 
     /**
      * Registry of attached persistors.
@@ -78,12 +79,8 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
         try {
 
             while($result = $loader->load($this->limit, $offset)) {
-                try {
-                    $this->persist($result);
 
-                } catch (PersistorException $e) {
-                    syslog(LOG_ERR, $e->getMessage());
-                }
+                $this->persist($result);
 
                 if ($this->limit > count($result)) {
                     break;
@@ -155,20 +152,18 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
      *
      * @param string $key
      *
-     * @throws \InvalidArgumentException in case there is no loader registered with the given key.
+     * @throws \Assert\InvalidArgumentException in case there is no loader registered with the given key.
      */
     public function detachLoader($key)
     {
-        if (!empty($this->loaders[$key])) {
+        Assertion::keyExists(
+            $this->loaders,
+            $key,
+            'No loader represented by '. $key .' found.',
+            DataAggregatorException::LOADER_NOT_FOUND
+        );
 
-            unset($this->loaders[$key]);
-
-        } else {
-            throw new \InvalidArgumentException(
-                'No registered loader found.',
-                DataAggregatorException::LOADER_NOT_FOUND
-            );
-        }
+        unset($this->loaders[$key]);
     }
 
     /**
@@ -191,20 +186,17 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
      *
      * @param string $key
      *
-     * @throws \InvalidArgumentException in case the given key does not correspond to a persistor.
+     * @throws \Assert\InvalidArgumentException in case the given key does not correspond to a persistor.
      */
-    public function detachPersistor($key = '')
+    public function detachPersistor($key)
     {
-        if (!empty($this->persistors[$key])) {
+        Assertion::keyExists(
+            $this->persistors,
+            $key,
+            'No registered persistor found.',
+            DataAggregatorException::PERSISTOR_NOT_FOUND
+        );
 
-            unset($this->persistors[$key]);
-
-        } else {
-
-            throw new \InvalidArgumentException(
-                'No registered persistor found.',
-                DataAggregatorException::PERSISTOR_NOT_FOUND
-            );
-        }
+        unset($this->persistors[$key]);
     }
 }
