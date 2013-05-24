@@ -18,5 +18,5 @@ interface PersistorDefaultInterface
      *
      * @param string $key
      */
-    public function detachPersistor($key = '');
+    public function detachPersistor($key);
 }

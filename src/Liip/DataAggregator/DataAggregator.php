@@ -90,7 +90,7 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
      *
      * @throws \InvalidArgumentException in case the given key does not correspond to a persistor.
      */
-    public function detachPersistor($key = '')
+    public function detachPersistor($key)
     {
         if (!empty($this->persistors[$key])) {
 
