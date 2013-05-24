@@ -63,7 +63,6 @@ class DataAggregatorTest extends DataAggregatorTestCase
 
     /**
      * @covers \Liip\DataAggregator\DataAggregator::run
-     * @covers \Liip\DataAggregator\DataAggregator::__construct
      */
     public function testRun()
     {

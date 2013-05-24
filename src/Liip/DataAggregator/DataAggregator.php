@@ -1,6 +1,8 @@
 <?php
 namespace Liip\DataAggregator;
 
+use Liip\DataAggregator\Components\Loaders\LoaderDefaultInterface;
+use Liip\DataAggregator\Components\Persistors\PersistorDefaultInterface;
 use Liip\DataAggregator\Loaders\LoaderException;
 use Liip\DataAggregator\Loaders\LoaderInterface;
 use Liip\DataAggregator\Persistors\PersistorException;
@@ -9,7 +11,7 @@ use Liip\DataAggregator\Persistors\PersistorInterface;
 /**
  *  The DataAggregator cumulates information provides by attached loaders and routes it to registered output handler.
  */
-class DataAggregator implements DataAggregatorInterface
+class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterface, LoaderDefaultInterface
 {
     /**
      * Registry of attached loaders.
@@ -29,17 +31,6 @@ class DataAggregator implements DataAggregatorInterface
      */
     protected $persistors = array();
 
-
-    /**
-     * Initiates an instance of the class.
-     *
-     */
-    public function __construct()
-    {
-        $this->loaders = array();
-        $this->persistors = array();
-        $this->loaderResults = array();
-    }
 
     /**
      * Adds given loader to registry.
@@ -99,7 +90,7 @@ class DataAggregator implements DataAggregatorInterface
      *
      * @throws \InvalidArgumentException in case the given key does not correspond to a persistor.
      */
-    public function detachPersistor($key)
+    public function detachPersistor($key = '')
     {
         if (!empty($this->persistors[$key])) {
 
