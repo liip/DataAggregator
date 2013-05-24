@@ -47,6 +47,21 @@ abstract class DataAggregatorTestCase extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Provides a stub of the LoaderInterface.
+     *
+     * @return \Liip\DataAggregator\Loaders\LoaderBatchInterface
+     */
+    protected function getDataLoaderBatchStub(array $methods = array())
+    {
+        return $this->getMockBuilder(
+            '\\Liip\\DataAggregator\\Loaders\\LoaderBatchInterface'
+        )
+            ->disableOriginalConstructor()
+            ->setMethods($methods)
+            ->getMockForAbstractClass();
+    }
+
+    /**
      * Provides a mock of the LoaderInterface.
      *
      * @return \Liip\DataAggregator\Loaders\LoaderInterface
