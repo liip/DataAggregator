@@ -2,6 +2,11 @@
 
 namespace Liip\DataAggregator\Persistors;
 
+/**
+ * Defines the contract every persistor has to full fill.
+ *
+ * @package Liip\DataAggregator\Persistors
+ */
 interface PersistorInterface
 {
     /**

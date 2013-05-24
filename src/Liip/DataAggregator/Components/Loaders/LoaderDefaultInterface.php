@@ -4,6 +4,11 @@ namespace Liip\DataAggregator\Components\Loaders;
 
 use Liip\DataAggregator\Loaders\LoaderInterface;
 
+/**
+ * Default definition of how to attach/detach loaders to an aggregator.
+ *
+ * @package Liip\DataAggregator\Components\Loaders
+ */
 interface LoaderDefaultInterface
 {
     /**

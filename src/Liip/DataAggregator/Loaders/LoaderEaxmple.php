@@ -1,6 +1,11 @@
 <?php
 namespace Liip\DataAggregator\Loaders;
 
+/**
+ * Example implementation of a loader.
+ *
+ * @package Liip\DataAggregator\Loaders
+ */
 class LoaderExample implements LoaderInterface
 {
     /**

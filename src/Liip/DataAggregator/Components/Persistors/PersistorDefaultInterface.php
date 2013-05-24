@@ -3,6 +3,11 @@ namespace Liip\DataAggregator\Components\Persistors;
 
 use Liip\DataAggregator\Persistors\PersistorInterface;
 
+/**
+ * Default definition of how to attach/detach persistors to an aggregator.
+ *
+ * @package Liip\DataAggregator\Components\Persistors
+ */
 interface PersistorDefaultInterface
 {
     /**

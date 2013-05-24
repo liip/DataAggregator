@@ -1,6 +1,11 @@
 <?php
 namespace Liip\DataAggregator\Loaders;
 
+/**
+ * Defines the contract every loader has to full fill.
+ *
+ * @package Liip\DataAggregator\Loaders
+ */
 interface LoaderInterface
 {
     /**

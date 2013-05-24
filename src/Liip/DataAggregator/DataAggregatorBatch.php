@@ -5,8 +5,8 @@ use Assert\Assertion;
 use Liip\DataAggregator\Components\Loaders\LoaderBatchInterface;
 use Liip\DataAggregator\Components\Persistors\PersistorDefaultInterface;
 use Liip\DataAggregator\Loaders\LoaderException;
-use Liip\DataAggregator\Loaders\LoaderBatchInterface AS Loader;
-use Liip\DataAggregator\Persistors\PersistorInterface AS Persistor;
+use Liip\DataAggregator\Loaders\LoaderBatchInterface as LoaderInterface;
+use Liip\DataAggregator\Persistors\PersistorInterface;
 
 /**
  *  The DataAggregator cumulates information provides by attached loaders and routes it to registered output handler.
@@ -15,13 +15,13 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
 {
     /**
      * Registry of attached loaders.
-     * @var array
+     * @var LoaderInterface[]
      */
     protected $loaders = array();
 
     /**
      * Registry of attached persistors.
-     * @var array
+     * @var PersistorInterface[]
      */
     protected $persistors = array();
 
@@ -40,7 +40,7 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
      * @param Loader $loader
      * @param string $key
      */
-    public function attachLoader(Loader $loader, $key = '')
+    public function attachLoader(LoaderInterface $loader, $key = '')
     {
         if (empty($key)) {
             $this->loaders[] = $loader;
@@ -68,7 +68,6 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
         );
 
         foreach ($this->loaders as $identifier => $loader) {
-
             $this->executeLoader($loader);
         }
     }
@@ -78,15 +77,15 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
      *
      * Any exception or error will be logged to the systems error log.
      *
-     * @param Loader $loader
+     * @param LoaderInterface $loader
      */
-    protected function executeLoader(Loader $loader)
+    protected function executeLoader(LoaderInterface $loader)
     {
         $offset = 0;
 
         try {
 
-            while($result = $loader->load($this->limit, $offset)) {
+            while ($result = $loader->load($this->limit, $offset)) {
 
                 $this->persist($result);
 
@@ -138,7 +137,6 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
     public function persist(array $data)
     {
         if (empty($this->persistors)) {
-
             throw new DataAggregatorException(
                 'No persistor attached.',
                 DataAggregatorException::NO_PERSISTOR_ATTACHED
@@ -177,10 +175,10 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
     /**
      * Adds the given persistor to the collection of output handlers
      *
-     * @param \Liip\DataAggregator\Persistors\PersistorInterface $persistor
+     * @param PersistorInterface $persistor
      * @param string $key
      */
-    public function attachPersistor(Persistor $persistor, $key = '')
+    public function attachPersistor(PersistorInterface $persistor, $key = '')
     {
         if (empty($key)) {
             $this->persistors[] = $persistor;

@@ -1,6 +1,11 @@
 <?php
 namespace Liip\DataAggregator\Loaders;
 
+/**
+ * Introduces the ability to set a maximum amount of data records to be returned.
+ *
+ * @package Liip\DataAggregator\Loaders
+ */
 interface LoaderBatchInterface
 {
     /**
@@ -31,6 +36,4 @@ interface LoaderBatchInterface
      * @return integer
      */
     public function getLimit();
-
-
 }
