@@ -10,8 +10,11 @@ interface LoaderBatchInterface
 {
     /**
      * Starts the data loading process.
+     *
+     * @param integer $limit
+     * @param integer $offset
      */
-    public function load();
+    public function load($limit, $offset = 0);
 
     /**
      * Backport to the DataAggregator.
@@ -22,18 +25,4 @@ interface LoaderBatchInterface
      * @return boolean
      */
     public function stopPropagation();
-
-    /**
-     * Defines the max amount ot records to be returned by the loader.
-     *
-     * @param $limit
-     */
-    public function setLimit($limit);
-
-    /**
-     * Returns the set amount of max returned records.
-     *
-     * @return integer
-     */
-    public function getLimit();
 }

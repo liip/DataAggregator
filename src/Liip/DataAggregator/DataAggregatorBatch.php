@@ -11,7 +11,7 @@ use Liip\DataAggregator\Persistors\PersistorInterface;
 /**
  *  The DataAggregator cumulates information provides by attached loaders and routes it to registered output handler.
  */
-class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterface, PersistorDefaultInterface
+class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchInterface, PersistorDefaultInterface
 {
     /**
      * Registry of attached loaders.
@@ -33,21 +33,6 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
      * @var integer
      */
     protected $limit = 0;
-
-    /**
-     * Adds given loader to registry.
-     *
-     * @param Loader $loader
-     * @param string $key
-     */
-    public function attachLoader(LoaderInterface $loader, $key = '')
-    {
-        if (empty($key)) {
-            $this->loaders[] = $loader;
-        } else {
-            $this->loaders[$key] = $loader;
-        }
-    }
 
     /**
      * Executes the processing of every attached loader.
@@ -150,6 +135,21 @@ class DataAggregatorBatch implements DataAggregatorInterface, LoaderBatchInterfa
             } catch (DataAggregatorException $e) {
                 syslog(LOG_ERR, $e->getMessage());
             }
+        }
+    }
+
+    /**
+     * Adds given loader to registry.
+     *
+     * @param LoaderInterface $loader
+     * @param string $key
+     */
+    public function attachLoader(LoaderInterface $loader, $key = '')
+    {
+        if (empty($key)) {
+            $this->loaders[] = $loader;
+        } else {
+            $this->loaders[$key] = $loader;
         }
     }
 
