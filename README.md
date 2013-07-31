@@ -3,7 +3,7 @@
 
 ## Current Travis Status
 
-[![Build Status](https://secure.travis-ci.org/liip/dataaggregator.png?branch=master)](http://travis-ci.org/liip/dataaggregator)
+[![Build Status](https://secure.travis-ci.org/liip/DataAggregator.png?branch=master)](http://travis-ci.org/liip/dataaggregator)
 
 
 ## Purpose
