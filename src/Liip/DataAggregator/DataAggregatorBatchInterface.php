@@ -7,7 +7,7 @@ namespace Liip\DataAggregator;
  *
  * @package Liip\DataAggregator
  */
-interface DataAggregatorInterface
+interface DataAggregatorBatchInterface
 {
     /**
      * Executes the processing of every attached loader
@@ -20,4 +20,18 @@ interface DataAggregatorInterface
      * @param array $data
      */
     public function persist(array $data);
+
+    /**
+     * Defines the max amount ot records to be returned by the loader.
+     *
+     * @param integer $limit
+     */
+    public function setLimit($limit);
+
+    /**
+     * Returns the set amount of max returned records.
+     *
+     * @return integer
+     */
+    public function getLimit();
 }
