@@ -65,16 +65,15 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
      */
     public function detachLoader($key)
     {
-        if (!empty($this->loaders[$key])) {
+        if (empty($this->loaders[$key])) {
 
-            unset($this->loaders[$key]);
-
-        } else {
             throw new \InvalidArgumentException(
                 'No registered loader found.',
                 DataAggregatorException::LOADER_NOT_FOUND
             );
         }
+
+        unset($this->loaders[$key]);
     }
 
     /**
@@ -101,17 +100,15 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
      */
     public function detachPersistor($key)
     {
-        if (!empty($this->persistors[$key])) {
-
-            unset($this->persistors[$key]);
-
-        } else {
+        if (empty($this->persistors[$key])) {
 
             throw new \InvalidArgumentException(
                 'No registered persistor found.',
                 DataAggregatorException::PERSISTOR_NOT_FOUND
             );
         }
+
+        unset($this->persistors[$key]);
     }
 
     /**
@@ -119,7 +116,8 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
      */
     public function run()
     {
-        foreach ($this->loaders as $identifier => $loader) {
+        /** @var LoaderInterface $loader */
+        foreach ($this->loaders as $loader) {
             try {
                 $this->loaderResults = array_merge($this->loaderResults, $loader->load());
 
@@ -157,11 +155,12 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
             );
         }
 
+        /** @var PersistorInterface $persistor */
         foreach ($this->persistors as $persistor) {
             try {
                 $persistor->persist($data);
 
-            } catch (DataAggregatorException $e) {
+            } catch (PersistorException $e) {
                 $this->getLogger()->error($e->getMessage());
             }
         }

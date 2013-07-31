@@ -2,7 +2,9 @@
 namespace Liip\DataAggregator\Tests;
 
 use Liip\DataAggregator\DataAggregator;
+use Liip\DataAggregator\DataAggregatorException;
 use Liip\DataAggregator\Loaders\LoaderException;
+use Liip\DataAggregator\Persistors\PersistorException;
 
 /**
  * Test case to verify the correctness of the DataAggregator implementation
@@ -240,5 +242,59 @@ class DataAggregatorTest extends DataAggregatorTestCase
     {
         $da = new DataAggregator();
         $da->persist(array());
+    }
+
+    /**
+     * @covers \Liip\DataAggregator\DataAggregator::persist
+     */
+    public function testLogWhilePersist()
+    {
+        $logger = $this->getMockBuilder('\\Psr\\Log\\AbstractLogger')
+            ->setMethods(array('error'))
+            ->getMockForAbstractClass();
+        $logger
+            ->expects($this->once())
+            ->method('error')
+            ->with($this->isType('string'));
+
+        $persistor = $this->getDataPersistorMock(array('persist'));
+
+        $persistor
+            ->expects($this->once())
+            ->method('persist')
+            ->will($this->throwException(new PersistorException('FAILED')));
+
+        $da = new DataAggregator();
+        $da->setLogger($logger);
+
+        $da->attachPersistor($persistor);
+        $da->persist(array());
+    }
+
+    /**
+     * @covers \Liip\DataAggregator\DataAggregator::getLogger
+     */
+    public function testGetLogger()
+    {
+        /** @var \Liip\DataAggregator\DataAggregatorBatch $da */
+        $da = new DataAggregator();
+
+        $this->assertInstanceOf('\\Psr\\Log\\NullLogger', $da->getLogger());
+    }
+
+    /**
+     * @covers \Liip\DataAggregator\DataAggregator::getLogger
+     * @covers \Liip\DataAggregator\DataAggregator::setLogger
+     */
+    public function testGetLoggerFromCache()
+    {
+        $logger = $this->getMockForAbstractClass('\\Psr\\Log\\AbstractLogger');
+
+        /** @var \Liip\DataAggregator\DataAggregatorBatch $da */
+        $da = new DataAggregator();
+
+        $da->setLogger($logger);
+
+        $this->assertInstanceOf('\\Psr\\Log\\AbstractLogger', $da->getLogger());
     }
 }

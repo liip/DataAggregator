@@ -3,6 +3,8 @@
 namespace Liip\DataAggregator\Tests;
 
 use Liip\DataAggregator\DataAggregatorBatch;
+use Liip\DataAggregator\Loaders\LoaderException;
+use Liip\DataAggregator\Persistors\PersistorException;
 
 
 class DataAggregatorBatchTest extends DataAggregatorTestCase
@@ -155,7 +157,6 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
     /**
      * @expectedException \Assert\InvalidArgumentException
      * @covers \Liip\DataAggregator\DataAggregatorBatch::run
-     * @covers \Liip\DataAggregator\DataAggregatorBatch::getLogger
      */
     public function testRunExpectingException()
     {
@@ -227,12 +228,66 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
     }
 
     /**
-     * @expectedException \Liip\DataAggregator\DataAggregatorException
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::persist
+     */
+    public function testLogWhilePersist()
+    {
+        $logger = $this->getMockBuilder('\\Psr\\Log\\AbstractLogger')
+            ->setMethods(array('error'))
+            ->getMockForAbstractClass();
+        $logger
+            ->expects($this->once())
+            ->method('error')
+            ->with($this->isType('string'));
+
+        $persistor = $this->getDataPersistorMock(array('persist'));
+
+        $persistor
+            ->expects($this->once())
+            ->method('persist')
+            ->will($this->throwException(new PersistorException('FAILED')));
+
+        $da = new DataAggregatorBatch();
+        $da->setLogger($logger);
+
+        $da->attachPersistor($persistor);
+        $da->persist(array());
+    }
+
+    /**
+     * @expectedException \Assert\InvalidArgumentException
      * @covers \Liip\DataAggregator\DataAggregatorBatch::persist
      */
     public function testPersistExpectingDataAggregatorException()
     {
         $da = new DataAggregatorBatch();
         $da->persist(array());
+    }
+
+    /**
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::getLogger
+     */
+    public function testGetLogger()
+    {
+        /** @var \Liip\DataAggregator\DataAggregatorBatch $da */
+        $da = new DataAggregatorBatch();
+
+        $this->assertInstanceOf('\\Psr\\Log\\NullLogger', $da->getLogger());
+    }
+
+    /**
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::getLogger
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::setLogger
+     */
+    public function testGetLoggerFromCache()
+    {
+        $logger = $this->getMockForAbstractClass('\\Psr\\Log\\AbstractLogger');
+
+        /** @var \Liip\DataAggregator\DataAggregatorBatch $da */
+        $da = new DataAggregatorBatch();
+
+        $da->setLogger($logger);
+
+        $this->assertInstanceOf('\\Psr\\Log\\AbstractLogger', $da->getLogger());
     }
 }

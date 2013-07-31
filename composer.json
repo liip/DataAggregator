@@ -15,7 +15,7 @@
 
     "require": {
         "beberlei/assert": "dev-master",
-        "monolog/monolog": "~1.6"
+        "psr/log": "~1.0"
     },
 
     "require-dev": {
@@ -24,5 +24,9 @@
 
     "autoload": {
         "psr-0": { "Liip\\DataAggregator": "src" }
+    },
+
+    "suggest": {
+        "monolog/monolog": "Allows more advanced logging of the application flow"
     }
 }
