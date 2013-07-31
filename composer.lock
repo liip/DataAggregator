@@ -1,0 +1,68 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "405f8b1e288617a9687066f3b8877616",
+    "packages": [
+
+    ],
+    "packages-dev": [
+        {
+            "name": "lapistano/proxy-object",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lapistano/proxy-object.git",
+                "reference": "bf26e21c32bd938f75c4ad43e10b65c1925f76a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lapistano/proxy-object/zipball/bf26e21c32bd938f75c4ad43e10b65c1925f76a0",
+                "reference": "bf26e21c32bd938f75c4ad43e10b65c1925f76a0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "lapistano\\ProxyObject": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Bastian Feder",
+                    "email": "lapis@bastian-feder.de",
+                    "homepage": "http://blog.bastian-feder.de"
+                }
+            ],
+            "description": "A library that makes it much easier to generate a proxy of your system under test (SUT)",
+            "homepage": "http://www.github.com/lapistano/proxy-object",
+            "keywords": [
+                "phpunit",
+                "proxy-object",
+                "testing"
+            ],
+            "time": "2013-06-18 14:58:18"
+        }
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "lapistano/proxy-object": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
