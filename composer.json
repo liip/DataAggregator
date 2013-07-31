@@ -14,7 +14,8 @@
     ],
 
     "require": {
-        "beberlei/assert": "dev-master"
+        "beberlei/assert": "dev-master",
+        "monolog/monolog": "1.6.0"
     },
 
     "require-dev": {

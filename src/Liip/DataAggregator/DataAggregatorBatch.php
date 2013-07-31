@@ -7,11 +7,14 @@ use Liip\DataAggregator\Components\Persistors\PersistorDefaultInterface;
 use Liip\DataAggregator\Loaders\LoaderException;
 use Liip\DataAggregator\Loaders\LoaderBatchInterface as LoaderInterface;
 use Liip\DataAggregator\Persistors\PersistorInterface;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 
 /**
  *  The DataAggregator cumulates information provides by attached loaders and routes it to registered output handler.
  */
-class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchInterface, PersistorDefaultInterface
+class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchInterface, PersistorDefaultInterface, LoggerAwareInterface
 {
     /**
      * Registry of attached loaders.
@@ -33,6 +36,12 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
      * @var integer
      */
     protected $limit = 0;
+
+    /**
+     * Defines the logger to be used.
+     * @var LoggerInterface
+     */
+    protected $logger;
 
     /**
      * Executes the processing of every attached loader.
@@ -82,7 +91,7 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
             }
 
         } catch (LoaderException $e) {
-            syslog(LOG_ERR, $e->getMessage());
+            $this->getLogger()->error($e->getMessage());
         }
     }
 
@@ -133,7 +142,7 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
                 $persistor->persist($data);
 
             } catch (DataAggregatorException $e) {
-                syslog(LOG_ERR, $e->getMessage());
+                $this->getLogger()->error($e->getMessage());
             }
         }
     }
@@ -204,5 +213,30 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
         );
 
         unset($this->persistors[$key]);
+    }
+
+    /**
+     * Sets a logger instance on the object
+     *
+     * @param LoggerInterface $logger
+     */
+    public function setLogger(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    /**
+     * Provides the instance of the currently set logger.
+     *
+     * @return LoggerInterface
+     */
+    public function getLogger()
+    {
+        if (empty($this->logger))
+        {
+            $this->logger = new NullLogger();
+        }
+
+        return $this->logger;
     }
 }
