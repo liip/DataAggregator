@@ -1,6 +1,11 @@
 <?php
 namespace Liip\DataAggregator\Persistors;
 
+/**
+ * Example implementation of a persistor.
+ *
+ * @package Liip\DataAggregator\Persistors
+ */
 class PersistorExample implements PersistorInterface
 {
     /**

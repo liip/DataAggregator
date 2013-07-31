@@ -2,16 +2,19 @@
 namespace Liip\DataAggregator\Loaders;
 
 /**
- * Defines the contract every loader has to full fill.
+ * Introduces the ability to set a maximum amount of data records to be returned.
  *
  * @package Liip\DataAggregator\Loaders
  */
-interface LoaderInterface
+interface LoaderBatchInterface
 {
     /**
      * Starts the data loading process.
+     *
+     * @param integer $limit
+     * @param integer $offset
      */
-    public function load();
+    public function load($limit, $offset = 0);
 
     /**
      * Backport to the DataAggregator.
