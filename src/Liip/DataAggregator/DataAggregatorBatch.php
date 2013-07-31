@@ -6,12 +6,16 @@ use Liip\DataAggregator\Components\Loaders\LoaderBatchInterface;
 use Liip\DataAggregator\Components\Persistors\PersistorDefaultInterface;
 use Liip\DataAggregator\Loaders\LoaderException;
 use Liip\DataAggregator\Loaders\LoaderBatchInterface as LoaderInterface;
+use Liip\DataAggregator\Persistors\PersistorException;
 use Liip\DataAggregator\Persistors\PersistorInterface;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 
 /**
  *  The DataAggregator cumulates information provides by attached loaders and routes it to registered output handler.
  */
-class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchInterface, PersistorDefaultInterface
+class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchInterface, PersistorDefaultInterface, LoggerAwareInterface
 {
     /**
      * Registry of attached loaders.
@@ -35,6 +39,12 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
     protected $limit = 0;
 
     /**
+     * Defines the logger to be used.
+     * @var LoggerInterface
+     */
+    protected $logger;
+
+    /**
      * Executes the processing of every attached loader.
      *
      * Run each loader with limit and offset as long as it
@@ -48,7 +58,7 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
     {
         Assertion::notEmpty(
             $this->loaders,
-            'No persistor attached.',
+            'No loader attached.',
             DataAggregatorException::NO_LOADER_ATTACHED
         );
 
@@ -82,7 +92,7 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
             }
 
         } catch (LoaderException $e) {
-            syslog(LOG_ERR, $e->getMessage());
+            $this->getLogger()->error($e->getMessage());
         }
     }
 
@@ -117,23 +127,22 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
      *
      * @param array $data
      *
-     * @throws DataAggregatorException in case no persistor has been attached.
+     * @throws InvalidArgumentException in case no persistor has been attached.
      */
     public function persist(array $data)
     {
-        if (empty($this->persistors)) {
-            throw new DataAggregatorException(
-                'No persistor attached.',
-                DataAggregatorException::NO_PERSISTOR_ATTACHED
-            );
-        }
+        Assertion::notEmpty(
+            $this->persistors,
+            'No persistor attached.',
+            DataAggregatorException::NO_PERSISTOR_ATTACHED
+        );
 
         foreach ($this->persistors as $persistor) {
             try {
                 $persistor->persist($data);
 
-            } catch (DataAggregatorException $e) {
-                syslog(LOG_ERR, $e->getMessage());
+            } catch (PersistorException $e) {
+                $this->getLogger()->error($e->getMessage());
             }
         }
     }
@@ -204,5 +213,29 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
         );
 
         unset($this->persistors[$key]);
+    }
+
+    /**
+     * Sets a logger instance on the object
+     *
+     * @param LoggerInterface $logger
+     */
+    public function setLogger(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    /**
+     * Provides the instance of the currently set logger.
+     *
+     * @return LoggerInterface
+     */
+    public function getLogger()
+    {
+        if (empty($this->logger)) {
+            $this->logger = new NullLogger();
+        }
+
+        return $this->logger;
     }
 }
