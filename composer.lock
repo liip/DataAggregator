@@ -3,9 +3,49 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "405f8b1e288617a9687066f3b8877616",
+    "hash": "a6c40030f21d2739b51bcebf601e1a94",
     "packages": [
-
+        {
+            "name": "beberlei/assert",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beberlei/assert.git",
+                "reference": "11a44345da7b33634be0f6c0e0507755e936a738"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beberlei/assert/zipball/11a44345da7b33634be0f6c0e0507755e936a738",
+                "reference": "11a44345da7b33634be0f6c0e0507755e936a738",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Assert": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                }
+            ],
+            "description": "Thin assertion library for input validation in business models.",
+            "keywords": [
+                "assert",
+                "assertion",
+                "validation"
+            ],
+            "time": "2013-07-24 16:58:55"
+        }
     ],
     "packages-dev": [
         {
@@ -57,6 +97,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "beberlei/assert": 20,
         "lapistano/proxy-object": 20
     },
     "platform": [

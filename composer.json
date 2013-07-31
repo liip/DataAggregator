@@ -13,7 +13,9 @@
         }
     ],
 
-    "require": {},
+    "require": {
+        "beberlei/assert": "dev-master"
+    },
 
     "require-dev": {
         "lapistano/proxy-object": "dev-master"
