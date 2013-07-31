@@ -155,6 +155,7 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
     /**
      * @expectedException \Assert\InvalidArgumentException
      * @covers \Liip\DataAggregator\DataAggregatorBatch::run
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::getLogger
      */
     public function testRunExpectingException()
     {

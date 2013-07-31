@@ -57,7 +57,7 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
     {
         Assertion::notEmpty(
             $this->loaders,
-            'No persistor attached.',
+            'No loader attached.',
             DataAggregatorException::NO_LOADER_ATTACHED
         );
 
@@ -232,8 +232,7 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
      */
     public function getLogger()
     {
-        if (empty($this->logger))
-        {
+        if (empty($this->logger)) {
             $this->logger = new NullLogger();
         }
 
