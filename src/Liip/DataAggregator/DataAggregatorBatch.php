@@ -83,11 +83,6 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
             while ($result = $loader->load($this->limit, $offset)) {
 
                 $this->persist($result);
-
-                if ($this->limit > count($result)) {
-                    break;
-                }
-
                 $offset += $this->limit;
             }
 

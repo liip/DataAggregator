@@ -3,7 +3,6 @@
 namespace Liip\DataAggregator\Tests;
 
 use Liip\DataAggregator\DataAggregatorBatch;
-use Liip\DataAggregator\Loaders\LoaderException;
 use Liip\DataAggregator\Persistors\PersistorException;
 
 
@@ -131,7 +130,7 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
 
         $loader = $this->getDataLoaderBatchStub(array('load'));
         $loader
-            ->expects($this->exactly(2))
+            ->expects($this->exactly(3))
             ->method('load')
             ->with(
                 $this->isType('integer'),
@@ -140,7 +139,8 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
             ->will(
                 $this->onConsecutiveCalls(
                     array('tux', 'gnu'),
-                    array('tux')
+                    array('tux'),
+                    array()
                 )
             );
 
