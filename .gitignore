@@ -1,6 +1,9 @@
 # Ignore composer files
 vendor
 
+# Ignore composer.lock since this is a library
+composer.lock
+
 # Ignore IDE specific stuff
 .idea
 
