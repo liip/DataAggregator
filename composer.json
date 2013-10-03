@@ -20,9 +20,9 @@
     },
     "suggest": {
         "monolog/monolog": "Allows more advanced logging of the application flow"
-    }
+    },
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": { "Liip\\DataAggregator": "src" }
-    },
+    }
 }
