@@ -87,7 +87,7 @@ class DataAggregatorTest extends DataAggregatorTestCase
     }
 
     /**
-     * @covers \Liip\DataAggregator\DataAggregator::run
+     * @covers \Liip\DataAggregator\DataAggregator::load
      */
     public function testRunExpectingLoaderToThrowDataLoaderException()
     {
@@ -97,17 +97,17 @@ class DataAggregatorTest extends DataAggregatorTestCase
             ->method('load')
             ->will($this->throwException(new LoaderException()));
 
-        $persistor = $this->getDataPersistorMock();
+        $da = $this->getProxyBuilder('\Liip\DataAggregator\DataAggregator')
+            ->setMethods(array('load'))
+            ->getProxy();
 
-        $da = new DataAggregator();
         $da->attachLoader($loader);
-        $da->attachPersistor($persistor);
-        $da->run();
+        $da->load();
     }
 
     /**
      * @dataProvider runMultipleLoadersDataprovider
-     * @covers \Liip\DataAggregator\DataAggregator::run
+     * @covers \Liip\DataAggregator\DataAggregator::load
      */
     public function testRunMultipleLoaders($expected, $loaderResult, $propagationStopped)
     {
@@ -126,14 +126,15 @@ class DataAggregatorTest extends DataAggregatorTestCase
                 $this->returnValue($propagationStopped)
             );
 
-        $da = new DataAggregator();
+        $da = $this->getProxyBuilder('\Liip\DataAggregator\DataAggregator')
+            ->setMethods(array('load'))
+            ->getProxy();
+
         $da->attachLoader($loader, 'tux');
         $da->attachLoader($loader, 'gnu');
         $da->attachPersistor($this->getDataPersistorMock());
 
-        $da->run();
-
-        $this->assertAttributeEquals($expected, 'loaderResults', $da);
+        $this->assertEquals($expected, $da->load());
     }
 
     /**
