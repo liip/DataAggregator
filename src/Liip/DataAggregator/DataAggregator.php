@@ -129,13 +129,7 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
             }
         }
 
-        try {
-
-            $this->persist($this->loaderResults);
-
-        } catch (PersistorException $e) {
-            $this->getLogger()->error($e->getMessage());
-        }
+        $this->persist($this->loaderResults);
     }
 
     /**
@@ -170,6 +164,8 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
      * Sets a logger instance on the object
      *
      * @param LoggerInterface $logger
+     *
+     * @return void
      */
     public function setLogger(LoggerInterface $logger)
     {

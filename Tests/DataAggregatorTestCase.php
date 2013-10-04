@@ -49,7 +49,9 @@ abstract class DataAggregatorTestCase extends \PHPUnit_Framework_TestCase
     /**
      * Provides a stub of the LoaderInterface.
      *
-     * @return \Liip\DataAggregator\Loaders\LoaderBatchInterface
+     * @param array $methods
+     *
+     * @return \Liip\DataAggregator\Loaders\LoaderBatchInterface|\PHPUnit_Framework_MockObject_MockObject
      */
     protected function getDataLoaderBatchStub(array $methods = array())
     {
@@ -64,7 +66,9 @@ abstract class DataAggregatorTestCase extends \PHPUnit_Framework_TestCase
     /**
      * Provides a mock of the LoaderInterface.
      *
-     * @return \Liip\DataAggregator\Loaders\LoaderInterface
+     * @param array $methods
+     *
+     * @return \Liip\DataAggregator\Loaders\LoaderInterface|\PHPUnit_Framework_MockObject_MockObject
      */
     protected function getDataLoaderMock(array $methods = array())
     {
@@ -79,7 +83,7 @@ abstract class DataAggregatorTestCase extends \PHPUnit_Framework_TestCase
     /**
      * Provides a stub of the PersistorInterface.
      *
-     * @return \Liip\DataAggregator\Persistors\PersistorInterface
+     * @return \Liip\DataAggregator\Persistors\PersistorInterface|\PHPUnit_Framework_MockObject_MockObject
      */
     protected function getDataPersistorStub()
     {
@@ -93,7 +97,9 @@ abstract class DataAggregatorTestCase extends \PHPUnit_Framework_TestCase
     /**
      * Provides a mock of the PersistorInterface.
      *
-     * @return \Liip\DataAggregator\Persistors\PersistorInterface
+     * @param array $methods
+     *
+     * @return \Liip\DataAggregator\Persistors\PersistorInterface|\PHPUnit_Framework_MockObject_MockObject
      */
     protected function getDataPersistorMock(array $methods = array())
     {

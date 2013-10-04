@@ -3,6 +3,7 @@
 namespace Liip\DataAggregator\Tests;
 
 use Liip\DataAggregator\DataAggregatorBatch;
+use Liip\DataAggregator\Loaders\LoaderException;
 use Liip\DataAggregator\Persistors\PersistorException;
 
 
@@ -151,6 +152,29 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
         $da->attachPersistor($persistor);
 
         $da->setLimit(2);
+        $da->run();
+    }
+
+    /**
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::run
+     * @covers \Liip\DataAggregator\DataAggregatorBatch::executeLoader
+     */
+    public function testExecuteLoaderExpectingLoaderException()
+    {
+        $persistor = $this->getDataPersistorMock(array('persist'));
+
+        $loader = $this->getDataLoaderBatchStub(array('load'));
+        $loader
+            ->expects($this->once())
+            ->method('load')
+            ->will($this->throwException(new LoaderException()));
+
+        /** @var \Liip\DataAggregator\DataAggregatorBatch $da */
+        $da = new DataAggregatorBatch();
+
+        $da->attachLoader($loader);
+        $da->attachPersistor($persistor);
+
         $da->run();
     }
 
