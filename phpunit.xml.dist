@@ -27,6 +27,7 @@
             <directory>./vendor/</directory>
             <directory>./builds/</directory>
             <directory>./Tests/</directory>
+            <file>./src/Liip/DataAggregator/Adaptor/Logger/MonologAdaptor.php</file>
         </blacklist>
     </filter>
 
