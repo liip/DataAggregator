@@ -10,6 +10,10 @@
             "name": "Bastian Feder",
             "email": "bastian.feder@liip.ch",
             "role": "maintainer"
+        },
+        {
+            "name": "List of contributors",
+            "homepage": "https://github.com/liip/DataAggregator/graphs/contributors"
         }
     ],
 
