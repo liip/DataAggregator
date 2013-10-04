@@ -79,7 +79,7 @@ $ git clone git://github.com/liip/DataAggregator.git
 ```
 
 ## Logging
-This project does for different reasone favor Monolog for the logger of choice. Unfortunately Monolog does not implement
+This project does for different reasons favor Monolog for the logger of choice. Unfortunately Monolog does not implement
 the Psr\Log\LoggerInterface. Therefor an Adaptor was implemented to bring the two worlds together.
 So in case you want to use a monolog logger use the MonologAdaptor as dependency instead of monolog directly.
 
