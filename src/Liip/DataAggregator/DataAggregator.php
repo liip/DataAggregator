@@ -139,7 +139,7 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
      *
      * @throws DataAggregatorException in case no output handler is attached.
      */
-    public function persist(array $data)
+    protected function persist(array $data)
     {
         if (empty($this->persistors)) {
 

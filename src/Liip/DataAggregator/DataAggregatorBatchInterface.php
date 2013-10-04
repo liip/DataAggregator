@@ -15,13 +15,6 @@ interface DataAggregatorBatchInterface
     public function run();
 
     /**
-     * Forwards the gathered data to every registered output handler.
-     *
-     * @param array $data
-     */
-    public function persist(array $data);
-
-    /**
      * Defines the max amount ot records to be returned by the loader.
      *
      * @param integer $limit

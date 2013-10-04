@@ -245,7 +245,9 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
             ->method('persist')
             ->with($this->isType('array'));
 
-        $da = new DataAggregatorBatch();
+        $da = $this->getProxyBuilder('\Liip\DataAggregator\DataAggregatorBatch')
+            ->setMethods(array('persist'))
+            ->getProxy();
 
         $da->attachPersistor($persistor);
         $da->persist($collection);
@@ -271,7 +273,9 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
             ->method('persist')
             ->will($this->throwException(new PersistorException('FAILED')));
 
-        $da = new DataAggregatorBatch();
+        $da = $this->getProxyBuilder('\Liip\DataAggregator\DataAggregatorBatch')
+            ->setMethods(array('persist'))
+            ->getProxy();
         $da->setLogger($logger);
 
         $da->attachPersistor($persistor);
@@ -284,7 +288,9 @@ class DataAggregatorBatchTest extends DataAggregatorTestCase
      */
     public function testPersistExpectingDataAggregatorException()
     {
-        $da = new DataAggregatorBatch();
+        $da = $this->getProxyBuilder('\Liip\DataAggregator\DataAggregatorBatch')
+            ->setMethods(array('persist'))
+            ->getProxy();
         $da->persist(array());
     }
 
