@@ -63,7 +63,7 @@ Add the following lines to your `composer.json` file and update your project's c
 }
 ```
 
-This composer configuration will checkout the 'cutting eadge' version ('dev-master') of the project. Be alarmed that this might be broken sometimes.
+This composer configuration will checkout the 'cutting edge' version ('dev-master') of the project. Be alarmed that this might be broken sometimes.
 
 
 **NOTE:**
@@ -78,6 +78,13 @@ The sources are also available via github. Just clone it as you might be familia
 $ git clone git://github.com/liip/DataAggregator.git
 ```
 
+## Logging
+This project does for different reasone favor Monolog for the logger of choice. Unfortunately Monolog does not implement
+the Psr\Log\LoggerInterface. Therefor an Adaptor was implemented to bring the two worlds together.
+So in case you want to use a monolog logger use the MonologAdaptor as dependency instead of monolog directly.
 
 ## Dependencies
 - Assert (http://github.com/beberlei/assert)
+
+## Suggestions
+- Monolog (https://github.com/Seldaek/monolog)
