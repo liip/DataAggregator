@@ -23,12 +23,6 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
     public $loaders = array();
 
     /**
-     * Collection of value objects returned from a loader.
-     * @var array
-     */
-    protected $loaderResults = array();
-
-    /**
      * Registry of attached persistors.
      * @var array
      */
@@ -116,20 +110,7 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
      */
     public function run()
     {
-        /** @var LoaderInterface $loader */
-        foreach ($this->loaders as $loader) {
-            try {
-                $this->loaderResults = array_merge($this->loaderResults, $loader->load());
-
-                if ($loader->stopPropagation()) {
-                    break;
-                }
-            } catch (LoaderException $e) {
-                $this->getLogger()->error($e->getMessage());
-            }
-        }
-
-        $this->persist($this->loaderResults);
+        $this->persist($this->load());
     }
 
     /**
@@ -139,7 +120,7 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
      *
      * @throws DataAggregatorException in case no output handler is attached.
      */
-    public function persist(array $data)
+    protected function persist(array $data)
     {
         if (empty($this->persistors)) {
 
@@ -184,5 +165,30 @@ class DataAggregator implements DataAggregatorInterface, PersistorDefaultInterfa
         }
 
         return $this->logger;
+    }
+
+    /**
+     * Loads and aggregates information from each registered loader.
+     *
+     * @return array
+     */
+    protected function load()
+    {
+        $data = array();
+
+        /** @var LoaderInterface $loader */
+        foreach ($this->loaders as $loader) {
+            try {
+                $data = array_merge($data, $loader->load());
+
+                if ($loader->stopPropagation()) {
+                    break;
+                }
+            } catch (LoaderException $e) {
+                $this->getLogger()->error($e->getMessage());
+            }
+        }
+
+        return $data;
     }
 }
