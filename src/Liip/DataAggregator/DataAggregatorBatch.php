@@ -124,7 +124,7 @@ class DataAggregatorBatch implements DataAggregatorBatchInterface, LoaderBatchIn
      *
      * @throws InvalidArgumentException in case no persistor has been attached.
      */
-    public function persist(array $data)
+    protected function persist(array $data)
     {
         Assertion::notEmpty(
             $this->persistors,
