@@ -45,6 +45,11 @@ This makes it possible to encapsulate a specific set of sources to one loader an
 already process information to the aggregator on the 1st level of your implementation. This makes it even easier
 to reuse loaders and persistors and should encourage you to follow all the nice oop principles out there (SOLID, DRY, ...).
 
+### Concept sketch
+![detail concept of the DataAggregator library](https://github.com/liip/DataAggregator/blob/master/media/concept.png "Detail concept of the DataAggregator")
+
+**Note:**
+This is kind of a future sketch, the TransformerLoader and TransformerPersistor are to be introduced soonish.
 
 ## Installation
 The source is now PSR-0 compatible. There is no specific installation routine to be followed. Just clone or checkout
