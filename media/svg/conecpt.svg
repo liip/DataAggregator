@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="conecpt.svg">
   <defs
      id="defs4">
     <marker
@@ -95,9 +95,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.5193507"
-     inkscape:cx="375.96382"
-     inkscape:cy="188.2477"
+     inkscape:zoom="1.0743432"
+     inkscape:cx="383.12603"
+     inkscape:cy="161.89749"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -111,7 +111,7 @@
      fit-margin-right="10"
      fit-margin-bottom="10"
      inkscape:window-width="1382"
-     inkscape:window-height="848"
+     inkscape:window-height="876"
      inkscape:window-x="58"
      inkscape:window-y="24"
      inkscape:window-maximized="1">
@@ -134,7 +134,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -184,7 +184,7 @@
          id="tspan3009"
          x="550"
          y="362.36215"
-         style="font-size:12px">Transistor -</tspan><tspan
+         style="font-size:12px">Transformer -</tspan><tspan
          sodipodi:role="line"
          x="550"
          y="377.36215"
@@ -210,7 +210,7 @@
          id="tspan3009-7"
          x="210.03516"
          y="361.47934"
-         style="font-size:12px">Transistor - </tspan><tspan
+         style="font-size:12px">Transformer - </tspan><tspan
          sodipodi:role="line"
          x="210.03516"
          y="376.47934"
@@ -259,26 +259,27 @@
     <rect
        style="fill:none;stroke:#000080;stroke-width:1.77165341;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4281"
-       width="68.228348"
+       width="33.228348"
        height="88.228348"
-       x="233.37416"
+       x="267.37415"
        y="615.90802"
        ry="7.1428571"
        rx="7.1428566" />
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="243.8623"
-       y="635.03857"
+       x="-681.15991"
+       y="288.46194"
        id="text3007-6-4"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
          sodipodi:role="line"
          id="tspan3009-7-5"
-         x="243.8623"
-         y="635.03857"
+         x="-681.15991"
+         y="288.46194"
          style="font-size:12px">Loader</tspan></text>
     <rect
-       style="fill:none;stroke:#7c916f;stroke-width:1.77165341000000010;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#808f70;stroke:#000000;stroke-width:1.77165341000000010;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;fill-opacity:0.06274510000000000"
        id="rect2985-9"
        width="107.5"
        height="139.99998"
@@ -289,18 +290,19 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="215.89287"
-       y="588.42212"
+       x="-679.97144"
+       y="223.11429"
        id="text2989-5"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
          sodipodi:role="line"
-         x="215.89287"
-         y="588.42212"
+         x="-679.97144"
+         y="223.11429"
          id="tspan2997-4"
          style="font-size:12px">Aggregator</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1.00000012px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="m 280,667.36217 99.09418,-79.14914"
+       d="m 280,632.36216 99.12327,-44.30213"
        id="path3036-7"
        inkscape:connector-curvature="0">
       <title
@@ -309,27 +311,28 @@
     <text
        sodipodi:linespacing="125%"
        id="text4438"
-       y="630.93359"
-       x="538.57141"
+       y="554.48102"
+       x="-687.08765"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
          style="font-size:12px"
-         y="630.93359"
-         x="538.57141"
+         y="554.48102"
+         x="-687.08765"
          id="tspan4440"
          sodipodi:role="line">Persistor</tspan></text>
     <rect
-       rx="7.1428566"
+       rx="7.1428561"
        ry="7.1428571"
-       y="614.84814"
-       x="531.07141"
+       y="616.39825"
+       x="533.39319"
        height="88.228348"
-       width="68.228348"
+       width="33.228348"
        id="rect4442"
-       style="fill:none;stroke:#225500;stroke-width:1.77165353000000003;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+       style="fill:none;stroke:#225500;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="M 554.50001,666.86217 446.03494,588.14718"
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="M 549.5,631.86216 446.00811,588.02941"
        id="path4444"
        inkscape:connector-curvature="0">
       <title
@@ -338,24 +341,12 @@
     <rect
        rx="7.1428566"
        ry="7.1428571"
-       y="566.64789"
-       x="526.78571"
+       y="568.29297"
+       x="528"
        height="139.99998"
        width="107.5"
        id="rect4448"
-       style="fill:none;stroke:#7c916f;stroke-width:1.77165341000000010;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4450"
-       y="586.64789"
-       x="544.28571"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         style="font-size:12px"
-         id="tspan4452"
-         y="586.64789"
-         x="544.28571"
-         sodipodi:role="line">Aggregator</tspan></text>
+       style="fill:none;stroke:#000000;stroke-width:1.77165341000000010;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
     <text
        sodipodi:linespacing="125%"
        id="text4456"
@@ -659,5 +650,60 @@
          x="488.4043"
          id="tspan5002"
          sodipodi:role="line">DI</tspan></text>
+    <rect
+       rx="7.1428566"
+       ry="7.1428576"
+       y="588.24799"
+       x="203.37415"
+       height="115.88837"
+       width="33.228348"
+       id="rect3076"
+       style="fill:none;stroke:#7c916f;stroke-width:1.77165341000000010;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3876"
+       y="581.47937"
+       x="211.45703"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:12px"
+         id="tspan3878"
+         y="581.47937"
+         x="211.45703"
+         sodipodi:role="line">Hybrid</tspan></text>
+    <text
+       transform="matrix(0,-1,1,0,0,0)"
+       sodipodi:linespacing="125%"
+       id="text3880"
+       y="617.11432"
+       x="-679.97144"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:12px"
+         id="tspan3882"
+         y="617.11432"
+         x="-679.97144"
+         sodipodi:role="line">Aggregator</tspan></text>
+    <rect
+       style="fill:none;stroke:#7c916f;stroke-width:1.77165341;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3884"
+       width="33.228348"
+       height="115.88837"
+       x="597.37415"
+       y="588.24799"
+       ry="7.1428576"
+       rx="7.1428566" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="541.45703"
+       y="581.47937"
+       id="text3886"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="541.45703"
+         y="581.47937"
+         id="tspan3888"
+         style="font-size:12px">Hybrid</tspan></text>
   </g>
 </svg>
