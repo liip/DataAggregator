@@ -46,7 +46,7 @@ already process information to the aggregator on the 1st level of your implement
 to reuse loaders and persistors and should encourage you to follow all the nice oop principles out there (SOLID, DRY, ...).
 
 ### Concept sketch
-![detail concept of the DataAggregator library](https://github.com/liip/DataAggregator/blob/master/media/concept.png "Detail concept of the DataAggregator")
+![detail concept of the DataAggregator library](media/concept.png "Detail concept of the DataAggregator")
 
 **Note:**
 This is kind of a future sketch, the TransformerLoader and TransformerPersistor are to be introduced soonish.
