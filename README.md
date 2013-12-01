@@ -48,9 +48,6 @@ to reuse loaders and persistors and should encourage you to follow all the nice 
 ### Concept sketch
 ![detail concept of the DataAggregator library](media/concept.png "Detail concept of the DataAggregator")
 
-**Note:**
-This is kind of a future sketch, the TransformerLoader and TransformerPersistor are to be introduced soonish.
-
 ## Installation
 The source is now PSR-0 compatible. There is no specific installation routine to be followed. Just clone or checkout
 the source into to your project and use it. In case you don't use a
