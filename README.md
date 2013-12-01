@@ -39,11 +39,15 @@ The purpose of the persistor is to make the information retrieved from the aggre
 This also means that the loader and persistor must have the same idea about the information passed between them.
 Furthermore it is possible for the persistor to process the data to be stored.
 
-### Special flavors - the hybrid
+### Special flavors
+#### the Hybrid
 Imagine an implementation acting towards a loader as an aggregator and towards an aggregator as a loader.
 This makes it possible to encapsulate a specific set of sources to one loader and provide the collected and probably
 already process information to the aggregator on the 1st level of your implementation. This makes it even easier
 to reuse loaders and persistors and should encourage you to follow all the nice oop principles out there (SOLID, DRY, ...).
+
+#### the transformers
+As the sketch shows the transformers are a more general approach to create a special transfer format (like e.g. a Doctrine entity) form the loaded data. This makes it much easier for an invoked persistor to do his work. Further a dedicated data validation can be introduced in the named transfer format.
 
 ### Concept sketch
 ![detail concept of the DataAggregator library](media/concept.png "Detail concept of the DataAggregator")
