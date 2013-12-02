@@ -14,10 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="conecpt.svg"
-   inkscape:export-filename="/home/lapistano/development/github/Liip/DataAggregator/media/concept.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   sodipodi:docname="conecpt_outputEvents.svg">
   <defs
      id="defs4">
     <marker
@@ -169,7 +166,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="2.1486864"
      inkscape:cx="435.15396"
-     inkscape:cy="314.26711"
+     inkscape:cy="258.41903"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -182,9 +179,9 @@
      fit-margin-left="10"
      fit-margin-right="10"
      fit-margin-bottom="10"
-     inkscape:window-width="1382"
-     inkscape:window-height="876"
-     inkscape:window-x="58"
+     inkscape:window-width="2560"
+     inkscape:window-height="1388"
+     inkscape:window-x="1440"
      inkscape:window-y="24"
      inkscape:window-maximized="1">
     <inkscape:grid
@@ -206,7 +203,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -707,6 +704,104 @@
          y="581.47937"
          id="tspan3888"
          style="font-size:12px">Hybrid</tspan></text>
+    <rect
+       transform="scale(-1,1)"
+       style="fill:none;stroke:#deaa87;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3082"
+       width="107.50034"
+       height="140.00035"
+       x="-465.13016"
+       y="196.82503"
+       ry="7.1428571"
+       rx="7.1428571" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3084"
+       y="211.47935"
+       x="370"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:12px"
+         y="211.47935"
+         x="370"
+         id="tspan3086"
+         sodipodi:role="line">Validator - </tspan><tspan
+         style="font-size:12px"
+         y="226.47935"
+         x="370"
+         sodipodi:role="line"
+         id="tspan3088">   Strategy</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="m 410.77794,331.70617 0.71428,33.17259"
+       id="path3090"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc">
+      <title
+         id="title3092">attach</title>
+    </path>
+    <rect
+       style="fill:none;stroke:#aa4400;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect4466-3-6"
+       width="123.22835"
+       height="38.228348"
+       x="-618.75635"
+       y="202.32111"
+       ry="7.1428571"
+       rx="7.1428566"
+       transform="scale(-1,1)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4468-1-6"
+       y="225.90894"
+       x="524.37946"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:12px"
+         y="225.90894"
+         x="524.37946"
+         id="tspan4470-9-0"
+         sodipodi:role="line">Validator</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4472-3-9"
+       d="m 506.18247,220.83408 -58.41834,0.71428"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)">
+      <title
+         id="title4474-4-6">attach</title>
+    </path>
+    <rect
+       transform="scale(-1,1)"
+       rx="7.1428566"
+       ry="7.1428571"
+       y="244.32111"
+       x="-618.75635"
+       height="38.228348"
+       width="123.22835"
+       id="rect3150"
+       style="fill:none;stroke:#aa4400;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="524.37946"
+       y="267.90894"
+       id="text3152"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3154"
+         x="524.37946"
+         y="267.90894"
+         style="font-size:12px">Validator</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="m 506.18247,262.83408 -58.41834,0.71428"
+       id="path3156"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc">
+      <title
+         id="title3158">attach</title>
+    </path>
     <flowRoot
        xml:space="preserve"
        id="flowRoot3160"
@@ -740,65 +835,35 @@
        id="rect3172"
        style="fill:none;stroke:#225500;stroke-width:1.77165341;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
     <rect
-       rx="7.1428571"
-       ry="7.1428571"
-       y="357.62595"
-       x="-154.49782"
+       style="fill:none;stroke:#aa4400;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3186"
+       width="123.22835"
        height="38.228348"
-       width="107.50034"
-       id="rect3196"
-       style="fill:none;stroke:#0000ff;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       x="-618.75635"
+       y="286.32111"
+       ry="7.1428571"
+       rx="7.1428566"
        transform="scale(-1,1)" />
     <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="79.481033"
-       y="379.86609"
-       id="text3198"
-       sodipodi:linespacing="125%"><tspan
-         id="tspan3202"
-         sodipodi:role="line"
-         x="79.481033"
-         y="379.86609"
-         style="font-size:12px">Logger</tspan></text>
-    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path3242"
-       d="m 139.03786,376.65258 73.27046,0.71428"
-       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)">
-      <title
-         id="title3244">attach</title>
-    </path>
-    <rect
-       style="fill:none;stroke:#0000ff;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect3246"
-       width="107.50034"
-       height="38.228348"
-       x="681.25031"
-       y="357.62595"
-       ry="7.1428571"
-       rx="7.1428571" />
-    <text
        sodipodi:linespacing="125%"
-       id="text3248"
-       y="379.86609"
-       x="715.48102"
+       id="text3188"
+       y="309.90894"
+       x="524.37946"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"><tspan
          style="font-size:12px"
-         y="379.86609"
-         x="715.48102"
-         sodipodi:role="line"
-         id="tspan3250">Logger</tspan></text>
+         y="309.90894"
+         x="524.37946"
+         id="tspan3190"
+         sodipodi:role="line">Validator</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="m 696.71022,376.65258 -73.27046,0.71428"
-       id="path3252"
+       sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc">
+       id="path3192"
+       d="m 506.18247,304.83408 -58.41834,0.71428"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)">
       <title
-         id="title3254">attach</title>
+         id="title3194">attach</title>
     </path>
     <rect
        rx="7.1428566"
@@ -828,7 +893,7 @@
            height="63.061787"
            x="75.860306"
            y="41.507797" /></flowRegion><flowPara
-         id="flowPara4593" /></flowRoot>    <path
+         id="flowPara4593"></flowPara></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
        d="m 470.69235,526.67032 c 0,0 1.69135,4.82058 2.77778,5 2.28512,0.38963 4.37319,-9.55923 6.48148,-10 2.18722,2.46023 4.23311,10.25831 6.48148,10 2.24837,-0.2583 5.39554,-8.43623 6.48148,-10 1.08595,-1.56376 2.77778,5 2.77778,5"
        id="path3113"
@@ -855,7 +920,7 @@
          y="529.86609"
          x="506.18451"
          sodipodi:role="line"
-         id="tspan4585">OutputObserver</tspan></text>
+         id="tspan4585">LoggerObserver</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
        d="m 638.69232,422.67036 c 0,0 1.69135,4.82058 2.77778,5 2.28512,0.38963 4.37319,-9.55923 6.48148,-10 2.18722,2.46023 4.23311,10.25831 6.48148,10 2.24837,-0.2583 5.39554,-8.43623 6.48148,-10 1.08595,-1.56376 2.77778,5 2.77778,5"
@@ -883,7 +948,7 @@
          y="425.86609"
          x="674.18451"
          sodipodi:role="line"
-         id="tspan4585-2">OutputObserver</tspan></text>
+         id="tspan4585-2">LoggerObserver</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Send)"
        d="m 193.73659,422.67032 c 0,0 -1.69135,4.82058 -2.77778,5 -2.28512,0.38963 -4.37319,-9.55923 -6.48148,-10 -2.18722,2.46023 -4.23311,10.25831 -6.48148,10 -2.24837,-0.2583 -5.39554,-8.43623 -6.48148,-10 -1.08595,-1.56376 -2.77778,5 -2.77778,5"
@@ -911,6 +976,42 @@
          y="425.86609"
          x="60.184582"
          sodipodi:role="line"
-         id="tspan4585-5">OutputObserver</tspan></text>
-  </g>
+         id="tspan4585-5">LoggerObserver</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5115"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion5117"><rect
+           id="rect5119"
+           width="119.60796"
+           height="160.09781"
+           x="623.63684"
+           y="17.539665" /></flowRegion><flowPara
+         id="flowPara5121"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5123"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion5125"><rect
+           id="rect5127"
+           width="136.36238"
+           height="193.14127"
+           x="621.77527"
+           y="13.351059" /></flowRegion><flowPara
+         id="flowPara5129"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5131"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(36.102516,185.9392)"><flowRegion
+         id="flowRegion5133"><rect
+           id="rect5135"
+           width="141.4818"
+           height="196.39906"
+           x="612.93262"
+           y="6.8354502" /></flowRegion><flowPara
+         id="flowPara5137"
+         style="font-size:12px">LoggerSubjects:</flowPara><flowPara
+         style="font-size:12px"
+         id="flowPara5139"> - consoleOutput</flowPara><flowPara
+         style="font-size:12px"
+         id="flowPara5141"> - ErrorLogging</flowPara></flowRoot>  </g>
 </svg>
