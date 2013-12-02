@@ -89,6 +89,9 @@ This project does for different reasons favor Monolog for the logger of choice. 
 the Psr\Log\LoggerInterface. Therefor an Adaptor was implemented to bring the two worlds together.
 So in case you want to use a monolog logger use the MonologAdaptor as dependency instead of monolog directly.
 
+**Update 2013-01-12**: @gnutix brought to my attention that [Monolog](https://github.com/Seldaek/monolog) just added support for the [Psr-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md). This is actually good news, it soon will be possible to get rid of the formerly introduced [MonoLogAdaptor](https://github.com/liip/DataAggregator/blob/master/src/Liip/DataAggregator/Adaptor/Logger/MonologAdaptor.php).
+Kudos to everyone involved in that achievement.
+
 ## Dependencies
 - Assert (http://github.com/beberlei/assert)
 
