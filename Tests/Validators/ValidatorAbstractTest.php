@@ -8,7 +8,7 @@ namespace Liip\DataAggregator\Tests\Validators;
 class ValidatorAbstractTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers \Liip\DataAggregator\Validators\NullValidator::validate
+     * @covers \Liip\DataAggregator\Validators\ValidatorAbstract::isValid
      */
     public function testIsInValid()
     {
@@ -24,7 +24,7 @@ class ValidatorAbstractTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Liip\DataAggregator\Validators\NullValidator::validate
+     * @covers \Liip\DataAggregator\Validators\ValidatorAbstract::isValid
      */
     public function testIsValid()
     {
