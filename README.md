@@ -1,6 +1,5 @@
 # Liip DataAggregator
 
-
 ## Current Travis Status
 
 [![Build Status](https://secure.travis-ci.org/liip/DataAggregator.png?branch=master)](https://travis-ci.org/liip/DataAggregator)
@@ -16,7 +15,7 @@ To be able to archive this it is build on a threefold of component types:
 - the persistor
 
 Furthermore the goal of this library is to be as small as it can be providing the most and simplest way to
-be extended and altered to one's personal needs.
+be extended and altered to ones' personal needs.
 
 ### The managing component - the aggregator
 The aggregator is the heart of the library. Since itself do not have any knowledge about the structure of
@@ -40,14 +39,16 @@ This also means that the loader and persistor must have the same idea about the 
 Furthermore it is possible for the persistor to process the data to be stored.
 
 ### Special flavors
-#### the Hybrid
+#### Hybrid
 Imagine an implementation acting towards a loader as an aggregator and towards an aggregator as a loader.
 This makes it possible to encapsulate a specific set of sources to one loader and provide the collected and probably
 already process information to the aggregator on the 1st level of your implementation. This makes it even easier
 to reuse loaders and persistors and should encourage you to follow all the nice oop principles out there (SOLID, DRY, ...).
 
-#### the transformers
-As the sketch shows the transformers are a more general approach to create a special transfer format (like e.g. a Doctrine entity) form the loaded data. This makes it much easier for an invoked persistor to do his work. Further a dedicated data validation can be introduced in the named transfer format.
+#### Transformers
+As the sketch shows the transformers are a more general approach to create a special transfer format (like e.g. a
+Doctrine entity) form the loaded data. This makes it much easier for an invoked persistor to do his work. Further a
+dedicated data validation can be introduced in the named transfer format.
 
 ### Concept sketch
 ![detail concept of the DataAggregator library](media/concept.png "Detail concept of the DataAggregator")
@@ -69,7 +70,8 @@ Add the following lines to your `composer.json` file and update your project's c
 }
 ```
 
-This composer configuration will checkout the 'cutting edge' version ('dev-master') of the project. Be alarmed that this might be broken sometimes.
+This composer configuration will checkout the 'cutting edge' version ('dev-master') of the project. Be alarmed that this
+might be broken sometimes.
 
 
 **NOTE:**
@@ -89,8 +91,23 @@ This project does for different reasons favor Monolog for the logger of choice. 
 the Psr\Log\LoggerInterface. Therefor an Adaptor was implemented to bring the two worlds together.
 So in case you want to use a monolog logger use the MonologAdaptor as dependency instead of monolog directly.
 
-**Update 2013-01-12**: @gnutix brought to my attention that [Monolog](https://github.com/Seldaek/monolog) just added support for the [Psr-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md). This is actually good news, it soon will be possible to get rid of the formerly introduced [MonoLogAdaptor](https://github.com/liip/DataAggregator/blob/master/src/Liip/DataAggregator/Adaptor/Logger/MonologAdaptor.php).
+**Update 2013-01-12**: @gnutix brought to my attention that [Monolog](https://github.com/Seldaek/monolog) just added
+support for the [Psr-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md). This is
+actually good news, it soon will be possible to get rid of the formerly introduced
+[MonoLogAdaptor](https://github.com/liip/DataAggregator/blob/master/src/Liip/DataAggregator/Adaptor/Logger/MonologAdaptor.php).
 Kudos to everyone involved in that achievement.
+
+## Validation
+The DataAggregator provides the base to introduce validation in to a loader, persistor and/or an entity (aka an instance
+of the class representing your transferred data).
+
+### Plain validator
+The idea behind a validator is to verify constraints are met by a value of a variable. Therefore theu interface defines the
+»validate« method usually throwing an exception if any constraint is not met. In case a decision other than handling an
+exception is needed the »isValid« method shall return a boolean indicating the validation has been passed (true) or not (false).
+
+### Validator strategies
+A strategy is a set of validators. Each of them bound to a specific type or classname a validation shall be invoked on.
 
 ## Dependencies
 - Assert (http://github.com/beberlei/assert)
