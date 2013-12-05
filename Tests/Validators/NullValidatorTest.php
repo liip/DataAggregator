@@ -4,10 +4,10 @@ namespace Liip\DataAggregator\Tests\Validators;
 use Liip\DataAggregator\Validators\NullValidator;
 
 /**
- * Class TestNullValidatorTest
+ * Class NullValidatorTest
  * @package LiipDataAggregatorTestsValidators
  */
-class TestNullValidatorTest extends \PHPUnit_Framework_TestCase
+class NullValidatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @covers \Liip\DataAggregator\Validators\NullValidator::isValid
