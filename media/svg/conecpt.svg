@@ -10,11 +10,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="763.58014"
-   height="389.49564"
+   height="536.46136"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="conecpt.svg"
+   sodipodi:docname="conecpt_full.svg"
    inkscape:export-filename="/home/lapistano/development/github/Liip/DataAggregator/media/concept.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -23,16 +23,15 @@
     <marker
        inkscape:stockid="Arrow1Send"
        orient="auto"
-       refY="0"
-       refX="0"
+       refY="0.0"
+       refX="0.0"
        id="Arrow1Send"
-       style="overflow:visible">
+       style="overflow:visible;">
       <path
          id="path4130"
-         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
-         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
-         inkscape:connector-curvature="0" />
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
     </marker>
     <marker
        inkscape:stockid="Arrow2Lend"
@@ -169,8 +168,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.0743432"
-     inkscape:cx="402.48278"
-     inkscape:cy="245.76818"
+     inkscape:cx="419.03818"
+     inkscape:cy="259.59733"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -197,7 +196,7 @@
        snapvisiblegridlinesonly="true"
        dotted="true"
        originx="-36.102516px"
-       originy="-329.96162px" />
+       originy="-329.96161px" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -207,7 +206,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -215,7 +214,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-36.102516,-332.90491)">
+     transform="translate(-36.102516,-185.9392)">
     <rect
        style="fill:none;stroke:#7c916f;stroke-width:1.77165341;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect2985"
@@ -708,6 +707,104 @@
          y="581.47937"
          id="tspan3888"
          style="font-size:12px">Hybrid</tspan></text>
+    <rect
+       transform="scale(-1,1)"
+       style="fill:none;stroke:#deaa87;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3082"
+       width="107.50034"
+       height="140.00035"
+       x="-465.13016"
+       y="196.82503"
+       ry="7.1428571"
+       rx="7.1428571" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3084"
+       y="211.47935"
+       x="370"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:12px"
+         y="211.47935"
+         x="370"
+         id="tspan3086"
+         sodipodi:role="line">Validator - </tspan><tspan
+         style="font-size:12px"
+         y="226.47935"
+         x="370"
+         sodipodi:role="line"
+         id="tspan3088">   Strategy</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="m 374.33595,307.50534 -93.57747,66.96533"
+       id="path3090"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc">
+      <title
+         id="title3092">attach</title>
+    </path>
+    <rect
+       style="fill:none;stroke:#aa4400;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect4466-3-6"
+       width="123.22835"
+       height="38.228348"
+       x="-618.75635"
+       y="202.32111"
+       ry="7.1428571"
+       rx="7.1428566"
+       transform="scale(-1,1)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4468-1-6"
+       y="225.90894"
+       x="524.37946"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:12px"
+         y="225.90894"
+         x="524.37946"
+         id="tspan4470-9-0"
+         sodipodi:role="line">Validator</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4472-3-9"
+       d="m 506.18247,220.83408 -58.41834,0.71428"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)">
+      <title
+         id="title4474-4-6">attach</title>
+    </path>
+    <rect
+       transform="scale(-1,1)"
+       rx="7.1428566"
+       ry="7.1428571"
+       y="244.32111"
+       x="-618.75635"
+       height="38.228348"
+       width="123.22835"
+       id="rect3150"
+       style="fill:none;stroke:#aa4400;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="524.37946"
+       y="267.90894"
+       id="text3152"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3154"
+         x="524.37946"
+         y="267.90894"
+         style="font-size:12px">Validator</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="m 506.18247,262.83408 -58.41834,0.71428"
+       id="path3156"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc">
+      <title
+         id="title3158">attach</title>
+    </path>
     <flowRoot
        xml:space="preserve"
        id="flowRoot3160"
@@ -822,12 +919,21 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot4587"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
          id="flowRegion4589"><rect
            id="rect4591"
            width="153.58221"
            height="63.061787"
            x="75.860306"
            y="41.507797" /></flowRegion><flowPara
-         id="flowPara4593" /></flowRoot>  </g>
+         id="flowPara4593" /></flowRoot>    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3141"
+       d="m 448.18876,307.50534 93.57747,66.96533"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)">
+      <title
+         id="title3143">attach</title>
+    </path>
+  </g>
 </svg>
