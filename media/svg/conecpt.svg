@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="conecpt_full.svg"
+   sodipodi:docname="conecpt.svg"
    inkscape:export-filename="/home/lapistano/development/github/Liip/DataAggregator/media/concept.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -206,7 +206,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -734,15 +734,6 @@
          x="370"
          sodipodi:role="line"
          id="tspan3088">   Strategy</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="m 374.33595,307.50534 -93.57747,66.96533"
-       id="path3090"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc">
-      <title
-         id="title3092">attach</title>
-    </path>
     <rect
        style="fill:none;stroke:#aa4400;stroke-width:1.77165353;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4466-3-6"
@@ -927,13 +918,13 @@
            x="75.860306"
            y="41.507797" /></flowRegion><flowPara
          id="flowPara4593" /></flowRoot>    <path
-       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="m 410.61931,305.90785 -0.71428,58.41834"
+       id="path3122"
        inkscape:connector-curvature="0"
-       id="path3141"
-       d="m 448.18876,307.50534 93.57747,66.96533"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)">
+       sodipodi:nodetypes="cc">
       <title
-         id="title3143">attach</title>
+         id="title3124">attach</title>
     </path>
   </g>
 </svg>
