@@ -29,6 +29,7 @@ class SubjectDispatcherTest  extends DataAggregatorTestCase
 
     /**
      * @covers Liip\DataAggregator\Subjects\SubjectDispatcher::attachSubject
+     * @covers Liip\DataAggregator\Subjects\SubjectDispatcher::getUniqueKey
      */
     public function testAttachSubject()
     {
