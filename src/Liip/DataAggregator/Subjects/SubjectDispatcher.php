@@ -71,6 +71,6 @@ class SubjectDispatcher implements SubjectDispatcherInterface
      */
     protected function getUniqueKey()
     {
-        return sha1(PHP_OS .PHP_SAPI . PHP_VERSION . microtime(true));
+        return sha1(getmypid() . 'dontPanik' .  microtime(true));
     }
 }
