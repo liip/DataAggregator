@@ -1,8 +1,10 @@
 <?php
-
 namespace Liip\DataAggregator\Subjects;
 
-
+/**
+ * Interface SubjectDispatcherAwareInterface
+ * @package LiipDataAggregatorSubjects
+ */
 interface SubjectDispatcherAwareInterface {
 
     /**

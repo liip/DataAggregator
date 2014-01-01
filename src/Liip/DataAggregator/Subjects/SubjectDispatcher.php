@@ -1,7 +1,7 @@
 <?php
 namespace Liip\DataAggregator\Subjects;
-use Assert\Assertion;
 
+use Assert\Assertion;
 
 /**
  * Class SubjectDispatcher
