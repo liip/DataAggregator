@@ -32,4 +32,14 @@ class PersistorExample implements PersistorInterface
     {
 
     }
+
+    /**
+     * Removes provided data.
+     *
+     * @param array $data
+     */
+    public function remove(array $data)
+    {
+
+    }
 }

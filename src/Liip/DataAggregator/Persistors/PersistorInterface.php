@@ -15,4 +15,11 @@ interface PersistorInterface
      * @param array $data
      */
     public function persist(array $data);
+
+    /**
+     * Removes provided data.
+     *
+     * @param array $data
+     */
+    public function remove(array $data);
 }
