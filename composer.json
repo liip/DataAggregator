@@ -16,11 +16,12 @@
         }
     ],
     "require": {
-        "beberlei/assert": "~1.5",
+        "beberlei/assert": ">=1.5",
         "psr/log": "~1.0"
     },
     "require-dev": {
-        "lapistano/proxy-object": "dev-master"
+        "lapistano/proxy-object": "dev-master",
+        "phpunit/phpunit" : "@stable"
     },
     "suggest": {
         "monolog/monolog": "Allows more advanced logging of the application flow"
