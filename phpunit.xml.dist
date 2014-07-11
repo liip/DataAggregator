@@ -8,7 +8,7 @@
         convertWarningsToExceptions="true"
         syntaxCheck="true"
         bootstrap="Tests/bootstrap.php"
-        strict="true"
+        strict="false"
         >
 
     <testsuites>
